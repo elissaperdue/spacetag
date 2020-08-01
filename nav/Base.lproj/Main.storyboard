@@ -166,7 +166,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Show Map View"/>
                                 <connections>
-                                    <action selector="showMap:" destination="whR-iH-muG" eventType="touchUpInside" id="gWh-7O-0zr"/>
+                                    <action selector="showMap:" destination="whR-iH-muG" eventType="touchUpInside" id="s9g-Oy-w28"/>
                                 </connections>
                             </button>
                         </subviews>
