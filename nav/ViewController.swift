@@ -20,7 +20,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
-        
     }
     
 
@@ -43,7 +42,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     // do stuff
                 }
             }
+        } else {
+            print("funtions will not work properly")
+            
         }
+        
     }
 
 

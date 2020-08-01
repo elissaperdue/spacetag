@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="-394.20289855072468" y="30.803571428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="T2C-7M-FvR">
             <objects>
-                <viewController id="zgQ-Vl-0Vr" sceneMemberID="viewController">
+                <viewController id="zgQ-Vl-0Vr" customClass="GameViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sJK-Tl-MYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
