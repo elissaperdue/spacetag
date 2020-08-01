@@ -16,16 +16,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func startPressed(_ sender: Any) {
         performSegue(withIdentifier: "start", sender: nil)
-    
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestAlwaysAuthorization()
+    }
+    
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+
 
         view.backgroundColor = .gray
         // Do any additional setup after loading the view.
