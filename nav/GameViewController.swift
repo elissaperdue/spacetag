@@ -8,14 +8,13 @@
 
 import UIKit
 import RadarSDK
+import ImageIO
+import FLAnimatedImage
 
 class GameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
+    @IBOutlet weak var globe: FLAnimatedImageView!
+    
     
     @IBAction func activateRadar(_ sender: Any) {
         
@@ -61,5 +60,17 @@ class GameViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        print("\(globe)")
+        if let path =  Bundle.main.path(forResource: "globe", ofType: "gif") {
+          if let data = NSData(contentsOfFile: path) {
+            let gif = FLAnimatedImage(animatedGIFData: data as Data)
+            globe.animatedImage = gif
+          }
+        }
+    }
+    
 }
