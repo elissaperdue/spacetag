@@ -10,9 +10,12 @@
 		82054475E99CE039BF7882DD /* Pods_nav.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160FF39722BEDE667146028B /* Pods_nav.framework */; };
 		8495520F24D5CB4E00C9D48D /* SigninViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495520E24D5CB4E00C9D48D /* SigninViewController.swift */; };
 		8495521324D5D2EA00C9D48D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8495521224D5D2EA00C9D48D /* GoogleService-Info.plist */; };
-		8495521D24D6070A00C9D48D /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 8495521C24D6070A00C9D48D /* fonts */; };
 		8495521F24D6087A00C9D48D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8495521E24D6087A00C9D48D /* HomeViewController.swift */; };
 		84E1F7A324D6204400EEE731 /* globe.gif in Resources */ = {isa = PBXBuildFile; fileRef = 84E1F7A224D6204400EEE731 /* globe.gif */; };
+		84E1F7B224D62A6800EEE731 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E1F7AE24D62A6800EEE731 /* SpaceMono-Regular.ttf */; };
+		84E1F7B324D62A6800EEE731 /* SpaceMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E1F7AF24D62A6800EEE731 /* SpaceMono-BoldItalic.ttf */; };
+		84E1F7B424D62A6800EEE731 /* SpaceMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E1F7B024D62A6800EEE731 /* SpaceMono-Bold.ttf */; };
+		84E1F7B524D62A6800EEE731 /* SpaceMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E1F7B124D62A6800EEE731 /* SpaceMono-Italic.ttf */; };
 		AD2BDB4724D5A89400364B4A /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BDB4624D5A89400364B4A /* GameViewController.swift */; };
 		AD2BDB4924D5FF7300364B4A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BDB4824D5FF7300364B4A /* MapViewController.swift */; };
 		ADF9C1B624C3AF5B0050F6C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADF9C1B524C3AF5B0050F6C7 /* AppDelegate.swift */; };
@@ -39,9 +42,12 @@
 		5E5A52CDE4729E7738C12EA2 /* Pods-nav.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nav.release.xcconfig"; path = "Target Support Files/Pods-nav/Pods-nav.release.xcconfig"; sourceTree = "<group>"; };
 		8495520E24D5CB4E00C9D48D /* SigninViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninViewController.swift; sourceTree = "<group>"; };
 		8495521224D5D2EA00C9D48D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8495521C24D6070A00C9D48D /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		8495521E24D6087A00C9D48D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		84E1F7A224D6204400EEE731 /* globe.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = globe.gif; path = ../../../Desktop/globe.gif; sourceTree = "<group>"; };
+		84E1F7AE24D62A6800EEE731 /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = SOURCE_ROOT; };
+		84E1F7AF24D62A6800EEE731 /* SpaceMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-BoldItalic.ttf"; sourceTree = SOURCE_ROOT; };
+		84E1F7B024D62A6800EEE731 /* SpaceMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Bold.ttf"; sourceTree = SOURCE_ROOT; };
+		84E1F7B124D62A6800EEE731 /* SpaceMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Italic.ttf"; sourceTree = SOURCE_ROOT; };
 		AD2BDB4624D5A89400364B4A /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		AD2BDB4824D5FF7300364B4A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		ADF9C1B224C3AF5B0050F6C7 /* nav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nav.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +123,11 @@
 		ADF9C1B424C3AF5B0050F6C7 /* nav */ = {
 			isa = PBXGroup;
 			children = (
+				84E1F7B024D62A6800EEE731 /* SpaceMono-Bold.ttf */,
+				84E1F7AF24D62A6800EEE731 /* SpaceMono-BoldItalic.ttf */,
+				84E1F7B124D62A6800EEE731 /* SpaceMono-Italic.ttf */,
+				84E1F7AE24D62A6800EEE731 /* SpaceMono-Regular.ttf */,
 				84E1F7A224D6204400EEE731 /* globe.gif */,
-				8495521C24D6070A00C9D48D /* fonts */,
 				ADF9C1B524C3AF5B0050F6C7 /* AppDelegate.swift */,
 				ADF9C1B724C3AF5B0050F6C7 /* SceneDelegate.swift */,
 				ADF9C1B924C3AF5B0050F6C7 /* ViewController.swift */,
@@ -229,11 +238,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E1F7A324D6204400EEE731 /* globe.gif in Resources */,
+				84E1F7B424D62A6800EEE731 /* SpaceMono-Bold.ttf in Resources */,
 				ADF9C1C224C3AF5E0050F6C7 /* LaunchScreen.storyboard in Resources */,
-				8495521D24D6070A00C9D48D /* fonts in Resources */,
 				8495521324D5D2EA00C9D48D /* GoogleService-Info.plist in Resources */,
+				84E1F7B324D62A6800EEE731 /* SpaceMono-BoldItalic.ttf in Resources */,
 				ADF9C1BF24C3AF5E0050F6C7 /* Assets.xcassets in Resources */,
+				84E1F7B524D62A6800EEE731 /* SpaceMono-Italic.ttf in Resources */,
 				ADF9C1BD24C3AF5B0050F6C7 /* Main.storyboard in Resources */,
+				84E1F7B224D62A6800EEE731 /* SpaceMono-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
