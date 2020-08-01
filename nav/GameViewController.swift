@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RadarSDK
 
 class GameViewController: UIViewController {
 
@@ -16,7 +17,20 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func activateRadar(_ sender: Any) {
+        
+        Radar.setUserId("abc")
 
+        Radar.setDescription(description)
+        Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
+          // do something with location, events, user
+            print("have location")
+        }
+        
+        Radar.startTracking(trackingOptions: RadarTrackingOptions.continuous)
+        print("user radar should be activated")
+    }
+    
     /*
     // MARK: - Navigation
 

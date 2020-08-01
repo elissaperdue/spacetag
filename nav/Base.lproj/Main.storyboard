@@ -64,6 +64,16 @@
                     <view key="view" contentMode="scaleToFill" id="sJK-Tl-MYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCb-fD-Hr8">
+                                <rect key="frame" x="144" y="406" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Radar.io activation"/>
+                                <connections>
+                                    <action selector="activateRadar:" destination="zgQ-Vl-0Vr" eventType="touchUpInside" id="nd6-d8-Pwj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5Am-hY-ajR"/>
                     </view>

@@ -10,12 +10,19 @@ import UIKit
 import RadarSDK
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, RadarDelegate {
+    func didLog(message: String) {
+        print("did sign in")
+    }
+    
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-         Radar.initialize(publishableKey: "prj_test_pk_6f9f856ba23b59a7b018ae2766585ca4fd049ef0")
+        Radar.initialize(publishableKey: "prj_test_pk_6f9f856ba23b59a7b018ae2766585ca4fd049ef0")
+        Radar.setDelegate(self)
+        print("radar initialized")
         return true
     }
 
@@ -27,6 +34,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
+    func didReceiveEvents(_ events: [RadarEvent], user: RadarUser) {
+       // do something with events, user
+        print("received RAdar Event")
+     }
+
+     func didUpdateLocation(_ location: CLLocation, user: RadarUser) {
+       // do something with location, user
+        print("locationUpdated")
+     }
+
+     func didUpdateClientLocation(_ location: CLLocation, stopped: Bool, source: RadarLocationSource) {
+
+       // do something with location, stopped, source
+     }
+
+     func didFail(status: RadarStatus) {
+       // do something with status
+        print("radarStatus fail")
+     }
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
