@@ -9,6 +9,7 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import RadarSDK
 
 
 class MapViewController: UIViewController {
@@ -23,7 +24,7 @@ class MapViewController: UIViewController {
         placesClient = GMSPlacesClient.shared()
         // Create a GMSCameraPosition that tells the map to display the
         // coordinate -33.86,151.20 at zoom level 6.
-       /* let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        /*let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
         self.view.addSubview(mapView)
 
@@ -47,42 +48,57 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    var lat = 0.0
-    var long = 0.0
+    
+    var long = 0.0;
+    var lat = 0.0;
 
     // Add a UIButton in Interface Builder, and connect the action to this function.
     @IBAction func getCurrentPlace(_ sender: UIButton) {
-      let placeFields = GMSPlaceField(rawValue:
-        GMSPlaceField.name.rawValue | GMSPlaceField.formattedAddress.rawValue
-      )!
-      placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { [weak self] (placeLikelihoods, error) in
-        guard let strongSelf = self else {
-          return
-        }
+     let placeFields = GMSPlaceField(rawValue:
+       GMSPlaceField.name.rawValue | GMSPlaceField.formattedAddress.rawValue
+     )!
 
-        guard error == nil else {
-          print("Current place error: \(error?.localizedDescription ?? "")")
-          return
-        }
-
-        guard let place = placeLikelihoods?.first?.place else {
-          strongSelf.nameLabel.text = "No current place"
-          strongSelf.addressLabel.text = ""
-          return
-        }
-
-        strongSelf.nameLabel.text = String(place.coordinate.latitude)
-        strongSelf.addressLabel.text = String(place.coordinate.longitude)
         
-        self?.lat = place.coordinate.latitude
-        self?.long = place.coordinate.longitude
-        // Do any additional setup after loading the view.
-      }
+     placesClient.findPlaceLikelihoodsFromCurrentLocation(withPlaceFields: placeFields) { [weak self] (placeLikelihoods, error) in
+       guard let strongSelf = self else {
+         return
+       }
+
+       guard error == nil else {
+         print("Current place error: \(error?.localizedDescription ?? "")")
+         return
+       }
+
+       guard let place = placeLikelihoods?.first?.place else {
+         strongSelf.nameLabel.text = "No current place"
+         strongSelf.addressLabel.text = ""
+         return
+       }
+        print(place.coordinate)
+       strongSelf.nameLabel.text = place.name
+       strongSelf.addressLabel.text = place.formattedAddress
+     
+        
+        Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
+               // do something with location, events, user
+                 print("have location")
+            let loc = location?.coordinate.latitude
+            print(loc ?? 0.0)
+            self?.lat = location?.coordinate.latitude as! Double
+            self?.long = location?.coordinate.longitude as! Double
+            print(self?.lat ?? 0.0)
+            print(self?.long ?? 0.0)
+            //strongSelf.nameLabel.text = place.name
+            //strongSelf.nameLabel.text = location?.coordinate.latitude
+            //strongSelf.nameLabel.text = location?.coordinate.latitude
+                //nameLabel.text = location?.coordinate.longitude
+             }
         
         
-
-
+     }
+    
     }
+    
     
     @IBAction func showMap(_ sender: Any) {
         
@@ -99,7 +115,5 @@ class MapViewController: UIViewController {
         
         
     }
-    
-    
 
 }
