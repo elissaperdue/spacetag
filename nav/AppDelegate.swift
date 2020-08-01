@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RadarDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        Radar.initialize(publishableKey: "prj_test_pk_6f9f856ba23b59a7b018ae2766585ca4fd049ef0")
+        Radar.initialize(publishableKey: "prj_live_pk_55fa7fc774958b757e21c798f2968e26b9dda806")
         Radar.setDelegate(self)
         print("radar initialized")
         return true
@@ -49,9 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, RadarDelegate {
        // do something with location, stopped, source
      }
 
-     func didFail(status: RadarStatus) {
+    func didFail(status: RadarStatus) {
        // do something with status
-        print("radarStatus fail")
      }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {

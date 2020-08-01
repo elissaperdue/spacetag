@@ -19,21 +19,38 @@ class GameViewController: UIViewController {
     
     @IBAction func activateRadar(_ sender: Any) {
         
-        Radar.setUserId("abc")
+        let userID = "abc";
 
-        Radar.setDescription(description)
-        Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
-          // do something with location, events, user
-            print("have location")
-        }
+        Radar.setUserId(userID)
+
+        Radar.setDescription("test user")
+
         
         Radar.startTracking(trackingOptions: RadarTrackingOptions.continuous)
-        print("user radar should be activated")
+        print("user radar should be activated");
+        
+        let tripOptions = RadarTripOptions(externalId: "299")
+        tripOptions.destinationGeofenceTag = "store"
+        tripOptions.destinationGeofenceExternalId = "123"
+        tripOptions.mode = .foot
+        tripOptions.metadata = [
+          "Customer Name": "Zoe",
+        ]
+        Radar.startTrip(options: tripOptions)
+        Radar.startTracking(trackingOptions: .continuous)
+        
     }
     
     @IBAction func stopRadar(_ sender: Any) {
-        Radar.stopTracking()
-        print("game stop")
+        Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
+          // do something with location, events, user
+            print("have location")
+            let loc = location?.coordinate
+            print(loc)
+        }
+        
+        //Radar.stopTracking()
+        print("tracklocation")
     }
     /*
     // MARK: - Navigation
