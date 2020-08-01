@@ -10,6 +10,7 @@ import UIKit
 import FirebaseCore
 import Firebase
 import GoogleSignIn
+import FirebaseDatabase
 
 class SigninViewController: UIViewController {
 
@@ -20,7 +21,7 @@ class SigninViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBOutlet weak var signInButton: GIDSignInButton!
+
     
     /*
     // MARK: - Navigation

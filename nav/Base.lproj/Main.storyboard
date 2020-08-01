@@ -24,9 +24,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="kcH-RP-6b9"/>
                     </view>
-                    <connections>
-                        <outlet property="signInButton" destination="ATm-l4-5BI" id="Bxe-zS-F99"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-8v-cCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
