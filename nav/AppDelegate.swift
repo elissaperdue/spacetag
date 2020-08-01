@@ -12,6 +12,8 @@ import FirebaseCore
 import Firebase
 import FirebaseDatabase
 import GoogleSignIn
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarDelegate {
@@ -101,6 +103,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
         // Override point for customization after application launch.
         
         
+        GMSServices.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
+        GMSPlacesClient.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
+
         FirebaseApp.configure()
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self

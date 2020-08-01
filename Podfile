@@ -11,5 +11,7 @@ pod 'GoogleSignIn'
 pod 'Firebase/Database'
 pod 'FLAnimatedImage', '~> 1.0'
 
+pod 'GoogleMaps'
+pod 'GooglePlaces'
 
 end
