@@ -9,5 +9,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Firestore'
 pod 'GoogleSignIn'
 pod 'Firebase/Database'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
 
 end
