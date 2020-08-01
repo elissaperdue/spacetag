@@ -109,8 +109,16 @@
                                     <action selector="getCurrentPlace:" destination="whR-iH-muG" eventType="touchUpInside" id="pOy-gm-gFj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkp-uo-Baz">
+                                <rect key="frame" x="153" y="616" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Show Map View"/>
+                                <connections>
+                                    <action selector="showMap:" destination="whR-iH-muG" eventType="touchUpInside" id="gWh-7O-0zr"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                         <viewLayoutGuide key="safeArea" id="OPd-Xw-GqY"/>
                     </view>
                     <connections>
