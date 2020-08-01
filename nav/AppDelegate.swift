@@ -10,6 +10,7 @@ import UIKit
 import RadarSDK
 import FirebaseCore
 import Firebase
+import FirebaseDatabase
 import GoogleSignIn
 
 @UIApplicationMain
@@ -32,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
     Auth.auth().signIn(with: credential) { (authResult, error) in
       if let error = error {
         let authError = error as NSError
-        if (isMFAEnabled && authError.code == AuthErrorCode.secondFactorRequired.rawValue) {
+        /*if ( authError.code == AuthErrorCode.secondFactorRequired.rawValue) {
           // The user is a multi-factor user. Second factor challenge is required.
           let resolver = authError.userInfo[AuthErrorUserInfoMultiFactorResolverKey] as! MultiFactorResolver
           var displayNameString = ""
@@ -66,9 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
             }
           })
         } else {
-          self.showMessagePrompt(error.localizedDescription)
+          //self.showMessagePrompt(error.localizedDescription)
           return
-        }
+        }*/
         // ...
         return
       }
