@@ -1,0 +1,16 @@
+PODS:
+  - RadarSDK (3.0.3)
+
+DEPENDENCIES:
+  - RadarSDK (~> 3.0.0)
+
+SPEC REPOS:
+  trunk:
+    - RadarSDK
+
+SPEC CHECKSUMS:
+  RadarSDK: eb9fd02b7e132dbc2bab8629432e98e1b2ced0c0
+
+PODFILE CHECKSUM: 968a2b253fd4736a1b2fe33181468e2a93fb227a
+
+COCOAPODS: 1.9.3
