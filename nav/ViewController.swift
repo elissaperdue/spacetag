@@ -12,9 +12,13 @@ import CoreLocation
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager?
-    @IBOutlet weak var starteverything:UIButton!
     
-
+    
+    @IBAction func startPressed(_ sender: Any) {
+        performSegue(withIdentifier: "start", sender: nil)
+    
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +29,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
         view.backgroundColor = .gray
         // Do any additional setup after loading the view.
-    
         //if starteverything.pressed
     
     }
