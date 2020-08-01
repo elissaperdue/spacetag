@@ -31,6 +31,10 @@ class GameViewController: UIViewController {
         print("user radar should be activated")
     }
     
+    @IBAction func stopRadar(_ sender: Any) {
+        Radar.stopTracking()
+        print("game stop")
+    }
     /*
     // MARK: - Navigation
 

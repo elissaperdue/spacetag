@@ -73,6 +73,14 @@
                                     <action selector="activateRadar:" destination="zgQ-Vl-0Vr" eventType="touchUpInside" id="nd6-d8-Pwj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10x-Hp-gny">
+                                <rect key="frame" x="169" y="676" width="77" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop Game"/>
+                                <connections>
+                                    <action selector="stopRadar:" destination="zgQ-Vl-0Vr" eventType="touchUpInside" id="Ksr-FY-7St"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5Am-hY-ajR"/>
@@ -80,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ifc-IY-1Vk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="680" y="31"/>
+            <point key="canvasLocation" x="452" y="31"/>
         </scene>
     </scenes>
 </document>
