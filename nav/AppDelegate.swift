@@ -82,6 +82,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
       // ...
         
     //performSegue(withIdentifier: "signIn", sender: self)
+        let user = Auth.auth().currentUser
+        print("UID : __________________________________________________________________________________________________________________________________________________")
+        
+        if let user = user {
+            let uid = user.uid
+            print (uid)
+        
+            let configuration = URLSessionConfiguration.default
+            let session = URLSession(configuration: configuration)
+            
+            let URLSTRING = "https://xn--dr8h.vercel.app/api/game/create?creatorId=" + String(uid) + "&tagDistance=1000"
+            let url = URL(string: URLSTRING)!
+            var request : URLRequest = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("application/json", forHTTPHeaderField: "Accept")
+            let dataTask = session.dataTask(with: url) { data,response,error in
+               guard let httpResponse = response as? HTTPURLResponse, let receivedData = data
+               else {
+                  print("error: not a valid http response")
+                  return
+               }
+               switch (httpResponse.statusCode) {
+                  case 200: //success response.
+                     break
+                  case 400:
+                     break
+                  default:
+                     break
+               }
+            }
+            dataTask.resume()
+        }
     }
         
     
