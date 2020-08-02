@@ -7,11 +7,25 @@
 //
 
 import UIKit
+import ImageIO
+import FLAnimatedImage
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var globe: FLAnimatedImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.isNavigationBarHidden = true;
+        
+        print("\(globe)")
+        if let path =  Bundle.main.path(forResource: "globe", ofType: "gif") {
+          if let data = NSData(contentsOfFile: path) {
+            let gif = FLAnimatedImage(animatedGIFData: data as Data)
+            globe.animatedImage = gif
+          }
+        }
 
         // Do any additional setup after loading the view.
     }

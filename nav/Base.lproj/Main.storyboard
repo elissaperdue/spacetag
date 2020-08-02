@@ -72,12 +72,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-8v-cCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1429" y="-943"/>
+            <point key="canvasLocation" x="-1430.4347826086957" y="-943.52678571428567"/>
         </scene>
-        <!--Game View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="CNS-WG-sNv">
             <objects>
-                <viewController storyboardIdentifier="HomeVC" id="6Do-rA-iG6" customClass="GameViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="6Do-rA-iG6" customClass="HomeViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NfW-Lh-dPL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="24"/>
                                 <state key="normal" title="create game"/>
                                 <connections>
-                                    <segue destination="Msr-nb-kbM" kind="show" id="HKf-oY-l3Z"/>
+                                    <segue destination="Msr-nb-kbM" kind="show" id="hw5-9b-y91"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; space tag &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oht-Od-VWr">
@@ -110,7 +110,7 @@
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="24"/>
                                 <state key="normal" title="join game"/>
                                 <connections>
-                                    <segue destination="ObG-e1-Mpg" kind="show" id="dVM-qS-DNx"/>
+                                    <segue destination="ObG-e1-Mpg" kind="show" id="oXR-wE-pe9"/>
                                 </connections>
                             </button>
                         </subviews>

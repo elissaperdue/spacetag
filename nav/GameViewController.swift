@@ -22,7 +22,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.navigationController?.isNavigationBarHidden = true;
+        self.navigationController?.isNavigationBarHidden = false;
     
         print("\(globe)")
         if let path =  Bundle.main.path(forResource: "globe", ofType: "gif") {
