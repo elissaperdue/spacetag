@@ -16,17 +16,28 @@ class SigninViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
+        //automatically sign in user:
+        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+        
+        //GIDSignIn.sharedInstance().signIn()
         
         self.navigationController?.isNavigationBarHidden = true;
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func googleButtonPressed(_ sender: GIDSignInButton) {
-        performSegue(withIdentifier: "signIn", sender: self)
+    @IBOutlet weak var signInButton: GIDSignInButton! {
+        didSet {
+            signInButton.style = GIDSignInButtonStyle.wide
+        }
     }
+    
+    //implement if we want a sign out button
+//    @IBAction func didTapSignOut(_ sender: AnyObject) {
+//      GIDSignIn.sharedInstance().signOut()
+//    }
+    
     
     /*
     // MARK: - Navigation

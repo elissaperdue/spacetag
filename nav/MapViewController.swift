@@ -89,6 +89,8 @@ class MapViewController: UIViewController {
             //print(loc ?? 0.0)
             self?.curLoc.latitude = location?.coordinate.latitude as! Double
             self?.curLoc.longitude = location?.coordinate.longitude as! Double
+            print(self?.curLoc.latitude)
+            print(self?.curLoc.longitude)
             //self?.lat = location?.coordinate.latitude as! Double
             //self?.long = location?.coordinate.longitude as! Double
             //print(self?.lat ?? 0.0)
