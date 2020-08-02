@@ -19,6 +19,3 @@ struct LocationTag {
 }
 
 
-var all: [LocationTag] {
-    return [LocationTag(name: "aLoc", latitude: 80.0, longitude: -40.32)]
-}
