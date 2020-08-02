@@ -20,6 +20,27 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarDelegate {
     
     var window: UIWindow?
+    var signInCallback: (()->())?
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
+           [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+           // Override point for customization after application launch.
+           
+           
+           GMSServices.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
+           GMSPlacesClient.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
+
+           FirebaseApp.configure()
+           GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+           GIDSignIn.sharedInstance().delegate = self
+           
+           
+           Radar.initialize(publishableKey: "prj_test_pk_6f9f856ba23b59a7b018ae2766585ca4fd049ef0")
+           Radar.setDelegate(self)
+           print("radar initialized")
+           return true
+       }
+    
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
       if let error = error {
@@ -37,82 +58,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
       let givenName = user.profile.givenName
       let familyName = user.profile.familyName
       let email = user.profile.email
-      // ...
-        print("UID : __________________________________________________________________________________________________________________________________________________")
-        print(userId)
-        print(idToken)
-        print(email)
-        print(fullName)
+        print(email!)
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let initialViewController = storyboard.instantiateViewController(withIdentifier: "HomeVC")
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = initialViewController
+//        self.window?.makeKeyAndVisible()
+        
+        NotificationCenter.default.post(name: NSNotification.Name("signedIn"), object: nil)
     }
-    /*
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
-        if let error = error {
-          // ... implement if error case ?
-          return
-        }
-
-
-      guard let authentication = user.authentication else { return }
-      let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
-                                                        accessToken: authentication.accessToken)
-      // ...
-        
-    Auth.auth().signIn(with: credential) { (authResult, error) in
-      if let error = error {
-        let authError = error as NSError
-
-        // ...
-        return
-      }
-      // User is signed in
-      // ...
-        
-    //performSegue(withIdentifier: "signIn", sender: self)
-        let user = Auth.auth().currentUser
-        print("UID : __________________________________________________________________________________________________________________________________________________")
-        
-        if let user = user {
-            let uid = user.uid
-            print (uid)
-            
-            let configuration = URLSessionConfiguration.default
-            let session = URLSession(configuration: configuration)
-            
-            let URLSTRING = "https://xn--dr8h.vercel.app/api/game/create?creatorId=" + String(uid) + "&tagDistance=1000"
-            let url = URL(string: URLSTRING)!
-            var request : URLRequest = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.addValue("application/json", forHTTPHeaderField: "Accept")
-            let dataTask = session.dataTask(with: url) { data,response,error in
-               guard let httpResponse = response as? HTTPURLResponse, let receivedData = data
-               else {
-                  print("error: not a valid http response")
-                  return
-               }
-               switch (httpResponse.statusCode) {
-                  case 200: //success response.
-                     break
-                  case 400:
-                     break
-                  default:
-                     break
-               }
-            }
-            dataTask.resume()
-        }
-    }
-        
-    
-    }
-
-    
-    */
     
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
     }
     
     
@@ -126,24 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
     
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-        [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        
-        GMSServices.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
-        GMSPlacesClient.provideAPIKey("AIzaSyBdUT09kUbC5uTauXy0FRoT3HxvswVen2E")
-
-        FirebaseApp.configure()
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-        
-        
-        Radar.initialize(publishableKey: "prj_test_pk_6f9f856ba23b59a7b018ae2766585ca4fd049ef0")
-        Radar.setDelegate(self)
-        print("radar initialized")
-        return true
-    }
+   
 
     // MARK: UISceneSession Lifecycle
 
@@ -177,17 +129,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
-    
-    
-    @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-      -> Bool {
-      return GIDSignIn.sharedInstance().handle(url)
-    }
-    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
-    }
-
-
 }
 

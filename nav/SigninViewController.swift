@@ -13,15 +13,20 @@ import GoogleSignIn
 import FirebaseDatabase
 
 class SigninViewController: UIViewController {
+    
+    @objc private func signIn() {
+        performSegue(withIdentifier: "signIn", sender: self)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(signIn), name: NSNotification.Name("signedIn"), object: nil)
+        //refreshInterface()
+        
         GIDSignIn.sharedInstance()?.presentingViewController = self
         //automatically sign in user:
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-        
-        //GIDSignIn.sharedInstance().signIn()
         
         self.navigationController?.isNavigationBarHidden = true;
         // Do any additional setup after loading the view.
