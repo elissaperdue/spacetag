@@ -14,6 +14,7 @@ import FirebaseDatabase
 import GoogleSignIn
 import GoogleMaps
 import GooglePlaces
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarDelegate {
