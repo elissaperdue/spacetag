@@ -13,5 +13,6 @@ pod 'FLAnimatedImage', '~> 1.0'
 
 pod 'GoogleMaps'
 pod 'GooglePlaces'
+pod 'FirebaseUI'
 
 end

@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="-1429" y="-943"/>
         </scene>
-        <!--Signin View Controller-->
+        <!--Game View Controller-->
         <scene sceneID="CNS-WG-sNv">
             <objects>
-                <viewController id="6Do-rA-iG6" customClass="SigninViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Do-rA-iG6" customClass="GameViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NfW-Lh-dPL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

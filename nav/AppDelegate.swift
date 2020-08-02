@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
       }
 
       guard let authentication = user.authentication else { return }
+        
+        print("AUTHENTICATION ID TOKEN : __________________________________________________________________________________________________________________________________________________")
+        print( authentication.idToken )
       let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                         accessToken: authentication.accessToken)
       // ...
