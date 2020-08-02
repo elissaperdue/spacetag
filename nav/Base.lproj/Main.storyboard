@@ -244,6 +244,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Mb4-i2-4ir"/>
                     <connections>
+                        <outlet property="distanceInput" destination="bRY-Ag-11w" id="Y26-LG-yey"/>
                         <outlet property="globe" destination="Zm2-GO-DKP" id="dBb-1l-CnA"/>
                         <segue destination="whR-iH-muG" kind="show" identifier="toGame" id="jgX-bk-lYr"/>
                     </connections>
@@ -270,6 +271,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="24"/>
                                 <state key="normal" title="enter game"/>
+                                <connections>
+                                    <action selector="enterGamePressed:" destination="ObG-e1-Mpg" eventType="touchUpInside" id="jlb-uh-h9u"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; space tag &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mz-7L-4ce">
                                 <rect key="frame" x="20" y="80" width="374" height="130"/>
@@ -290,7 +294,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="8wY-Bt-9GG"/>
                     <connections>
+                        <outlet property="gameCodeInput" destination="CyY-Bt-N57" id="bVg-v1-an2"/>
                         <outlet property="globe" destination="GYX-gg-27X" id="iSG-FK-Qzg"/>
+                        <segue destination="whR-iH-muG" kind="presentation" identifier="toExistingGame" id="J5Y-2h-9jk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjJ-Cf-KUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -299,6 +305,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="jgX-bk-lYr"/>
         <segue reference="cLW-Vx-rCG"/>
     </inferredMetricsTieBreakers>
 </document>

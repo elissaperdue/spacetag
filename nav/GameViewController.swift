@@ -15,55 +15,9 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var globe: FLAnimatedImageView!
     
+    @IBOutlet weak var distanceInput: UITextField!
     
-    @IBAction func activateRadar(_ sender: Any) {
-        
-        let userID = "abc";
-
-        Radar.setUserId(userID)
-
-        Radar.setDescription("test user")
-
-        
-        Radar.startTracking(trackingOptions: RadarTrackingOptions.continuous)
-        print("user radar should be activated");
-        
-        let tripOptions = RadarTripOptions(externalId: "299")
-        tripOptions.destinationGeofenceTag = "store"
-        tripOptions.destinationGeofenceExternalId = "123"
-        tripOptions.mode = .foot
-        tripOptions.metadata = [
-          "Customer Name": "Zoe",
-        ]
-        Radar.startTrip(options: tripOptions)
-        Radar.startTracking(trackingOptions: .continuous)
-        
-    }
-    
-    @IBAction func startPressed(_ sender: Any) {
-        
-        performSegue(withIdentifier: "toGame", sender: sender)
-    }
-    @IBAction func stopRadar(_ sender: Any) {
-        Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
-          // do something with location, events, user
-            print("have location")
-            let loc = location?.coordinate
-            print(loc)
-        }
-        
-        //Radar.stopTracking()
-        print("tracklocation")
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    @IBOutlet weak var gameCodeInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,5 +32,35 @@ class GameViewController: UIViewController {
           }
         }
     }
+
+
+    
+    @IBAction func startPressed(_ sender: Any) {
+        
+        print("need to create new game")
+        var tagDistance = distanceInput.text!
+        
+        //spacetag.vercel.app/api/game/create?creatorId={player.uuid}&tagDistance={numberInFeet}
+        
+        
+        performSegue(withIdentifier: "toGame", sender: sender)
+    }
+
+    
+    
+    @IBAction func enterGamePressed(_ sender: Any) {
+        
+        print("need to join existing game")
+        var gameCode = gameCodeInput.text!
+        //spacetag.vercel.app/api/game/join?playerId={playerWhosJoining}&gameId={shortGameId}
+        
+        performSegue(withIdentifier: "toExistingGame", sender: sender)
+        
+    }
+    
+    
+    
+
+
     
 }
