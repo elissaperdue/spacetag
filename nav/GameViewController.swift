@@ -40,6 +40,10 @@ class GameViewController: UIViewController {
         
     }
     
+    @IBAction func startPressed(_ sender: Any) {
+        
+        performSegue(withIdentifier: "toGame", sender: sender)
+    }
     @IBAction func stopRadar(_ sender: Any) {
         Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
           // do something with location, events, user
@@ -64,7 +68,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true;
+        //self.navigationController?.isNavigationBarHidden = true;
     
         print("\(globe)")
         if let path =  Bundle.main.path(forResource: "globe", ofType: "gif") {

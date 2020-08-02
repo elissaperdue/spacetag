@@ -77,6 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
       }
       // User is signed in
       // ...
+        
+    //performSegue(withIdentifier: "signIn", sender: self)
     }
         
     

@@ -18,10 +18,15 @@ class SigninViewController: UIViewController {
         super.viewDidLoad()
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
+        
+        self.navigationController?.isNavigationBarHidden = true;
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func googleButtonPressed(_ sender: GIDSignInButton) {
+        performSegue(withIdentifier: "signIn", sender: self)
+    }
     
     /*
     // MARK: - Navigation
