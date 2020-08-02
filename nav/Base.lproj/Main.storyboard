@@ -132,7 +132,7 @@
             <objects>
                 <viewController id="whR-iH-muG" customClass="MapViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gj8-pC-3Pv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF2-de-ive">
@@ -175,8 +175,10 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <viewLayoutGuide key="safeArea" id="OPd-Xw-GqY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="wRG-kB-MHR"/>
                     <connections>
                         <outlet property="addressLabel" destination="uaK-JI-pCt" id="bbm-ph-jkI"/>
                         <outlet property="nameLabel" destination="nF2-de-ive" id="Ak1-de-3vW"/>
@@ -184,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TFb-3K-F4S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2052" y="-1639"/>
+            <point key="canvasLocation" x="2257" y="-944"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="RMf-nO-6Mm">
@@ -244,7 +246,7 @@
                     <navigationItem key="navigationItem" id="Mb4-i2-4ir"/>
                     <connections>
                         <outlet property="globe" destination="Zm2-GO-DKP" id="dBb-1l-CnA"/>
-                        <segue destination="whR-iH-muG" kind="presentation" identifier="toGame" id="jgX-bk-lYr"/>
+                        <segue destination="whR-iH-muG" kind="show" identifier="toGame" id="jgX-bk-lYr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDB-sI-JtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -302,29 +304,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjJ-Cf-KUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="773.91304347826087" y="-483.48214285714283"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="iUb-qb-2bq">
-            <objects>
-                <viewController id="piR-8v-feb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="yFO-vi-PYr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-dW-4CR">
-                                <rect key="frame" x="184" y="317" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GAME!"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="XSR-Kp-Lx3"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="23a-9u-kJq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IlM-IG-Ca0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1888" y="-752"/>
         </scene>
     </scenes>
 </document>
