@@ -29,7 +29,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yob-ob-pee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2319" y="-944"/>
+            <point key="canvasLocation" x="-2061" y="-485"/>
         </scene>
         <!--Signin View Controller-->
         <scene sceneID="yKN-zg-Dop">
@@ -56,9 +56,6 @@
                                 <rect key="frame" x="176" y="832" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
-                                <connections>
-                                    <segue destination="6Do-rA-iG6" kind="show" id="GzO-gm-Rga"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,12 +64,12 @@
                     <navigationItem key="navigationItem" id="PU6-US-5E5"/>
                     <connections>
                         <outlet property="signInButton" destination="ATm-l4-5BI" id="LyQ-GS-Vq3"/>
-                        <segue destination="6Do-rA-iG6" kind="show" identifier="signIn" id="cLW-Vx-rCG"/>
+                        <segue destination="6Do-rA-iG6" kind="custom" identifier="signIn" customClass="BottomCardSegue" customModule="nav" customModuleProvider="target" id="cLW-Vx-rCG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D06-8v-cCp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1430.4347826086957" y="-943.52678571428567"/>
+            <point key="canvasLocation" x="-1228" y="-485"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="CNS-WG-sNv">
@@ -93,7 +90,7 @@
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="24"/>
                                 <state key="normal" title="create game"/>
                                 <connections>
-                                    <segue destination="Msr-nb-kbM" kind="show" id="hw5-9b-y91"/>
+                                    <segue destination="Msr-nb-kbM" kind="custom" customClass="BottomCardSegue" customModule="nav" customModuleProvider="target" id="hw5-9b-y91"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&lt; space tag &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oht-Od-VWr">
@@ -110,7 +107,7 @@
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="24"/>
                                 <state key="normal" title="join game"/>
                                 <connections>
-                                    <segue destination="ObG-e1-Mpg" kind="show" id="oXR-wE-pe9"/>
+                                    <segue destination="ObG-e1-Mpg" kind="custom" customClass="BottomCardSegue" customModule="nav" customModuleProvider="target" id="oXR-wE-pe9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -124,14 +121,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTV-pN-PP4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-288.40579710144931" y="-972.32142857142856"/>
+            <point key="canvasLocation" x="-419" y="-485"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="3d3-53-M6g">
             <objects>
                 <viewController id="whR-iH-muG" customClass="MapViewController" customModule="nav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gj8-pC-3Pv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nF2-de-ive">
@@ -187,6 +184,21 @@
             </objects>
             <point key="canvasLocation" x="2257" y="-944"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="L76-mD-y1z">
+            <objects>
+                <viewController id="VEn-9q-87I" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XAC-aX-KGW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="SHs-4a-g5x"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S2z-f9-guq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486" y="-1803"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="RMf-nO-6Mm">
             <objects>
@@ -213,8 +225,9 @@
                                 <rect key="frame" x="20" y="80" width="374" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SpaceMono-Bold" family="Space Mono" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="tag distance..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bRY-Ag-11w">
                                 <rect key="frame" x="31" y="356" width="183" height="34"/>
@@ -231,6 +244,15 @@
                                     <segment title="Meters"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAp-VZ-I43">
+                                <rect key="frame" x="20" y="44" width="63" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
+                                <state key="normal" title="&lt; back"/>
+                                <connections>
+                                    <segue destination="6Do-rA-iG6" kind="custom" customClass="BottomCardSegue" customModule="nav" customModuleProvider="target" id="XQT-1z-UDS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="CXK-Ax-T1J"/>
@@ -244,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDB-sI-JtS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="-1158"/>
+            <point key="canvasLocation" x="795.6521739130435" y="-1158.4821428571429"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="dXo-Bw-Sgp">
@@ -272,15 +294,25 @@
                                 <rect key="frame" x="20" y="80" width="374" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SpaceMono-Bold" family="Space Mono" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter game code..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CyY-Bt-N57">
-                                <rect key="frame" x="31" y="356" width="324" height="34"/>
+                                <rect key="frame" x="44" y="356" width="324" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqh-5o-AWR">
+                                <rect key="frame" x="20" y="44" width="63" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpaceMono-Regular" family="Space Mono" pointSize="17"/>
+                                <state key="normal" title="&lt; back"/>
+                                <connections>
+                                    <segue destination="6Do-rA-iG6" kind="custom" customClass="BottomCardSegue" customModule="nav" customModuleProvider="target" id="Nd0-y5-BwZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="v4y-Cz-8OG"/>
@@ -294,11 +326,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XjJ-Cf-KUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.91304347826087" y="-483.48214285714283"/>
+            <point key="canvasLocation" x="796" y="-485"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="jgX-bk-lYr"/>
-        <segue reference="cLW-Vx-rCG"/>
+        <segue reference="XQT-1z-UDS"/>
     </inferredMetricsTieBreakers>
 </document>

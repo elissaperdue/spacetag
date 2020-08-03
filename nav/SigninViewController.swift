@@ -22,7 +22,6 @@ class SigninViewController: UIViewController {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(signIn), name: NSNotification.Name("signedIn"), object: nil)
-        //refreshInterface()
         
         GIDSignIn.sharedInstance()?.presentingViewController = self
         //automatically sign in user:
