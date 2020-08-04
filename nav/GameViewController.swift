@@ -14,22 +14,22 @@ import GoogleSignIn
 
 class GameViewController: UIViewController {
     
-    let user: GIDGoogleUser? = nil
+    var user: GIDGoogleUser! = nil
+    var USERID: String = ""
     
     @IBOutlet weak var globe: FLAnimatedImageView!
-    
     @IBOutlet weak var distanceInput: UITextField!
-    
     @IBOutlet weak var gameCodeInput: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let user: GIDGoogleUser? = appDelegate.USER
-//        if(user == nil){
-//            performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-//        }
+        USERID = appDelegate.USERID
+        
+        if((USERID) == ""){
+            print("___________________________________________________________________________________________________________________ ERROR user nil!_____________________________________________________________________________________________________________________________")
+        }
         
         self.navigationController?.isNavigationBarHidden = true;
     
@@ -50,52 +50,31 @@ class GameViewController: UIViewController {
         let tagDistance = distanceInput.text!
         print(tagDistance)
         if (tagDistance != ""){
-            if user != nil {
-                let uid = user?.userID
-                print (uid!)
-                       
-                let configuration = URLSessionConfiguration.default
-                let session = URLSession(configuration: configuration)
-                       
-                let URLSTRING = "https://spacetag.vercel.app/api/game/create?creatorId=" + String(uid!) + "&tagDistance=" + tagDistance
+            if ((USERID) != "" ){
+                
+//                let configuration = URLSessionConfiguration.default
+//                let session = URLSession(configuration: configuration)
+                
+                let URLSTRING = "https://spacetag.vercel.app/api/game/create?creatorId=" + USERID + "&tagDistance=" + tagDistance
                 let url = URL(string: URLSTRING)!
-                var request : URLRequest = URLRequest(url: url)
+                var request = URLRequest(url: url)
                 request.httpMethod = "POST"
-                request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-                request.addValue("application/json", forHTTPHeaderField: "Accept")
-                
-                
-                let dataTask = session.dataTask(with: url) { data,response,error in guard let httpResponse = response as? HTTPURLResponse, let receivedData = data
-                    else {
-                     print("error: not a valid http response")
-                     return
-                    }
-                    switch (httpResponse.statusCode) {
-                     case 200: //success response.
-                        break
-                     case 400:
-                        break
-                     default:
-                        break
+                let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                    if let error = error {
+                        print("error: \(error)")
+                    } else {
+                        if let response = response as? HTTPURLResponse {
+                            print("statusCode: \(response.statusCode)")
+                        }
+                        if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                            print("data: \(dataString)")
+                        }
                     }
                 }
                 
-//                //let session = URLSession.shared
-//                let task = session.dataTask(with: request) { (data, response, error) in
-//
-//                    if let error = error {
-//                        // Handle HTTP request error
-//                    } else if let data = data {
-//                        print( "Got data back")
-//
-//                    } else {
-//                        // Handle unexpected error
-//                    }
-//                }
-                dataTask.resume()
-                
+                task.resume()
+                performSegue(withIdentifier: "toGame", sender: sender)
             }
-            performSegue(withIdentifier: "toGame", sender: sender)
         }
     }
 

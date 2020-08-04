@@ -20,6 +20,7 @@ import FirebaseAuth
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarDelegate {
     
     var window: UIWindow?
+    var USERID: String! = ""
     var USER: GIDGoogleUser! = nil
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
@@ -49,10 +50,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
             } else {
                 print("\(error.localizedDescription)")
             }
-        return
+            return
         }
-        USER = user
-        print(USER.profile.email!)
+        
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                let authError = error as NSError
+                // ...
+                return
+            }
+            self.USERID = Auth.auth().currentUser?.uid 
+            self.USER = user
+        }
         
 //      // Perform any operations on signed in user here.
 //      let userId = user.userID                  // For client-side use only!
@@ -62,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, RadarD
 //      let familyName = user.profile.familyName
 //      let email = user.profile.email
         
-        
+        //Notify sign in view controller:
         NotificationCenter.default.post(name: NSNotification.Name("signedIn"), object: nil)
     }
     
