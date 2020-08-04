@@ -63,21 +63,37 @@ class GameViewController: UIViewController {
                 request.httpMethod = "POST"
                 request.addValue("application/json", forHTTPHeaderField: "Content-Type")
                 request.addValue("application/json", forHTTPHeaderField: "Accept")
+                
+                
                 let dataTask = session.dataTask(with: url) { data,response,error in guard let httpResponse = response as? HTTPURLResponse, let receivedData = data
-                          else {
-                             print("error: not a valid http response")
-                             return
-                          }
-                          switch (httpResponse.statusCode) {
-                             case 200: //success response.
-                                break
-                             case 400:
-                                break
-                             default:
-                                break
-                          }
+                    else {
+                     print("error: not a valid http response")
+                     return
+                    }
+                    switch (httpResponse.statusCode) {
+                     case 200: //success response.
+                        break
+                     case 400:
+                        break
+                     default:
+                        break
+                    }
                 }
+                
+//                //let session = URLSession.shared
+//                let task = session.dataTask(with: request) { (data, response, error) in
+//
+//                    if let error = error {
+//                        // Handle HTTP request error
+//                    } else if let data = data {
+//                        print( "Got data back")
+//
+//                    } else {
+//                        // Handle unexpected error
+//                    }
+//                }
                 dataTask.resume()
+                
             }
             performSegue(withIdentifier: "toGame", sender: sender)
         }

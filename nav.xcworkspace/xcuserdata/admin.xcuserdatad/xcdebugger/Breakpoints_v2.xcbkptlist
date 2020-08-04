@@ -238,5 +238,68 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03F8C83A-5441-4FBF-A35C-4A69527AF2B1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "nav/FadeSegue.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "TransitioningAnimatorOut"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "03F8C83A-5441-4FBF-A35C-4A69527AF2B1 - ff5246bc168c4bce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nav.TransitioningAnimatorOut.__allocating_init() -&gt; nav.TransitioningAnimatorOut"
+                  moduleName = "nav"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Projects/spacetag/nav/FadeSegue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "03F8C83A-5441-4FBF-A35C-4A69527AF2B1 - 4426ddd670a2baf9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nav.TransitioningAnimatorOut.__deallocating_deinit"
+                  moduleName = "nav"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Projects/spacetag/nav/FadeSegue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "03F8C83A-5441-4FBF-A35C-4A69527AF2B1 - 335cb0bdff63f27e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "nav.TransitioningAnimatorOut.init() -&gt; nav.TransitioningAnimatorOut"
+                  moduleName = "nav"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/admin/Projects/spacetag/nav/FadeSegue.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "93">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
