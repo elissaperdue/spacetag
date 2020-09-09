@@ -17,7 +17,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.isNavigationBarHidden = true;
+        self.navigationController?.isNavigationBarHidden = true
         
         print("\(globe)")
         if let path =  Bundle.main.path(forResource: "globe", ofType: "gif") {
