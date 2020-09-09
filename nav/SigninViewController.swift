@@ -31,7 +31,7 @@ class SigninViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true;
         // Do any additional setup after loading the view.
     }
-    
+
     @IBOutlet weak var signInButton: GIDSignInButton! {
         didSet {
             signInButton.style = GIDSignInButtonStyle.wide

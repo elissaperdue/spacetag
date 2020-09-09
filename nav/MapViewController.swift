@@ -24,19 +24,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         placesClient = GMSPlacesClient.shared()
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        /*let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
-        self.view.addSubview(mapView)
-        
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView*/
-        // Do any additional setup after loading the view.
+   
     }
     
 
@@ -86,19 +74,11 @@ class MapViewController: UIViewController {
                // do something with location, events, user
                  print("have location")
             //let loc = location?.coordinate.latitude
-            //print(loc ?? 0.0)
-            self?.curLoc.latitude = location?.coordinate.latitude as! Double
-            self?.curLoc.longitude = location?.coordinate.longitude as! Double
-            print(self?.curLoc.latitude)
-            print(self?.curLoc.longitude)
-            //self?.lat = location?.coordinate.latitude as! Double
-            //self?.long = location?.coordinate.longitude as! Double
-            //print(self?.lat ?? 0.0)
-            //print(self?.long ?? 0.0)
-            //strongSelf.nameLabel.text = place.name
-            //strongSelf.nameLabel.text = location?.coordinate.latitude
-            //strongSelf.nameLabel.text = location?.coordinate.latitude
-                //nameLabel.text = location?.coordinate.longitude
+            self?.curLoc.latitude = location?.coordinate.latitude ?? 0
+            self?.curLoc.longitude = location?.coordinate.longitude ?? 0
+            print(self?.curLoc.latitude ?? 0);
+            print(self?.curLoc.longitude ?? 0)
+        
              }
         
         
@@ -124,10 +104,10 @@ class MapViewController: UIViewController {
     }
      
     @IBAction func tagPressed(_ sender: Any) {
-        var newLoc = LocationTag(name: "compLoc", latitude: 0.0, longitude: 0.0)
+        let newLoc = LocationTag(name: "compLoc", latitude: 0.0, longitude: 0.0)
 
         
-        var distance = calculateDistance(compLocA: newLoc.latitude, compLocO: newLoc.longitude, curLocA: curLoc.latitude, curLocO: curLoc.longitude)
+        let distance = calculateDistance(compLocA: newLoc.latitude, compLocO: newLoc.longitude, curLocA: curLoc.latitude, curLocO: curLoc.longitude)
         
         print(distance)
         
