@@ -11,7 +11,6 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import RadarSDK
-@testable import nav
 
 class MapViewController: UIViewController {
 
@@ -27,23 +26,11 @@ class MapViewController: UIViewController {
    
     }
     
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     //curLoc will be modified to contain current locaiton of user
     var curLoc = LocationTag.self(name: "curLocation", latitude: 0.0, longitude: 0.0)
   
 
-    // Add a UIButton in Interface Builder, and connect the action to this function.
+    //Updates current location of user when button is pressed
     @IBAction func getCurrentPlace(_ sender: UIButton) {
      let placeFields = GMSPlaceField(rawValue:
        GMSPlaceField.name.rawValue | GMSPlaceField.formattedAddress.rawValue
@@ -71,9 +58,7 @@ class MapViewController: UIViewController {
      
         
         Radar.trackOnce { (status: RadarStatus, location: CLLocation?, events: [RadarEvent]?, user: RadarUser?) in
-               // do something with location, events, user
                  print("have location")
-            //let loc = location?.coordinate.latitude
             self?.curLoc.latitude = location?.coordinate.latitude ?? 0
             self?.curLoc.longitude = location?.coordinate.longitude ?? 0
             print(self?.curLoc.latitude ?? 0);
@@ -86,7 +71,7 @@ class MapViewController: UIViewController {
     
     }
     
-    
+    //Locate me Button will prompt Google Map views of current location
     @IBAction func showMap(_ sender: Any) {
         
         let camera = GMSCameraPosition.camera(withLatitude: curLoc.latitude, longitude: curLoc.longitude, zoom: 6.0)
@@ -103,6 +88,7 @@ class MapViewController: UIViewController {
         
     }
      
+    //Action to tag result if tag was successful
     @IBAction func tagPressed(_ sender: Any) {
         let newLoc = LocationTag(name: "compLoc", latitude: 0.0, longitude: 0.0)
 
@@ -111,14 +97,12 @@ class MapViewController: UIViewController {
         
         print(distance)
         
-        //hard coded game distance
-        
         if(distance <= 50){
             print("Game Over!")
         }
     }
     
-    
+    //Function to calculate if tag is in range 
     func calculateDistance(compLocA: Double, compLocO: Double, curLocA: Double, curLocO: Double)->Double{
         
         var xComp = (compLocA-curLocA)
